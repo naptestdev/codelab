@@ -33,23 +33,5 @@ export const markdownToHTML = (text: string) => {
 
   let result = md.render(text);
 
-  // result = result.replace(/!<img src=".+" alt=".+" \/>/gm, (match) => {
-  //   const title = match.split('"')[3];
-  //   const url = match.split('"')[1];
-
-  //   if (url.startsWith("https://www.youtube.com/embed"))
-  //     return `
-  //   <div style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative">
-  //     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="${url}" title="${title}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  //   </div>
-  //   `;
-
-  //   return `
-  //   <div style="width: 100%; height: 0; padding-bottom: 56.25%; position: relative">
-  //     <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%" src="${url}" title="${title}" frameborder="0"></iframe>
-  //   </div>
-  //   `;
-  // });
-
   return result;
 };

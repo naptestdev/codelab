@@ -21,7 +21,7 @@ const Post: NextPage<PostProps> = ({ post }) => {
         <p>{new Date(post.updatedAt).toLocaleString()}</p>
 
         <article
-          className="prose prose-lg dark:prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-headings:mt-8 prose-headings:mb-6 prose-pre:bg-[#121213] prose-pre:p-4"
+          className="prose prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-headings:mt-8 prose-headings:mb-6 prose-h1:text-2xl prose-h2:text-2xl prose-h3:text-xl prose-h1:font-semibold prose-strong:font-semibold prose-pre:bg-[#121213] prose-pre:p-4"
           dangerouslySetInnerHTML={{ __html: post.content }}
         ></article>
       </div>

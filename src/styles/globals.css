@@ -5,3 +5,8 @@
 body {
   @apply bg-[#202124] text-gray-100;
 }
+
+.prose * {
+  word-wrap: break-word;
+  word-break: break-word;
+}
