@@ -3,6 +3,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { GET_HOME_DATA } from "../graphql/queries/home";
 import Link from "next/link";
 import { client } from "../graphql/client";
+import Accordion from "../components/Accordion";
 
 interface HomeProps {
   data: { sections: any[] };
@@ -10,28 +11,30 @@ interface HomeProps {
 
 const Home: NextPage<HomeProps> = ({ data }) => {
   return (
-    <div className="flex justify-center mx-3 my-6">
-      <div className="w-full max-w-[800px] flex flex-col items-stretch gap-4">
-        {data.sections.map((section) => (
-          <div key={section.id}>
-            <div className="bg-[#ececec] py-3 px-4 rounded text-xl">
-              {section.title}
-            </div>
-
-            <div className="flex flex-col p-4 bg-white rounded text-lg">
-              {section.posts.length === 0 && (
-                <p className="text-gray-400">Chưa có bài giảng nào</p>
-              )}
-              {section.posts.map((item: any) => (
-                <Link href={`/post/${item.slug}`} key={item.id}>
-                  <a className="text-blue-600">{item.title}</a>
-                </Link>
-              ))}
-            </div>
-          </div>
-        ))}
+    <>
+      <div
+        className="h-[200px] md:h-[350px] lg:h-[400px] bg-cover bg-no-repeat flex flex-col justify-center items-center"
+        style={{
+          backgroundImage:
+            "url(https://resources.mindx.edu.vn/uploads/images/coverltweb.jpg)",
+        }}
+      >
+        <p className="text-3xl md:text-4xl text-white text-center flex md:block flex-col items-center md:text-left md:uppercase px-[100px] w-full font-semibold">
+          <span>Khoá học </span>
+          <span>Lập trình Web</span>
+        </p>
       </div>
-    </div>
+      <div className="flex justify-center mx-3 my-6">
+        <div className="w-full max-w-[800px] flex flex-col items-stretch">
+          <div className="bg-[#E7323E] py-4 rounded-t text-xl text-center text-white">
+            Chương trình Lab
+          </div>
+          {data.sections.map((section) => (
+            <Accordion key={section.id} section={section} />
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
