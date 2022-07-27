@@ -1,7 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 
 import { GET_HOME_DATA } from "../graphql/queries/home";
-import Link from "next/link";
 import { client } from "../graphql/client";
 import Accordion from "../components/Accordion";
 import Footer from "../components/Footer";
