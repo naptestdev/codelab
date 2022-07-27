@@ -5,19 +5,32 @@ import Link from "next/link";
 import { client } from "../graphql/client";
 
 interface HomeProps {
-  data: { posts: any[] };
+  data: { sections: any[] };
 }
 
 const Home: NextPage<HomeProps> = ({ data }) => {
   return (
-    <div>
-      {data.posts.map((item) => (
-        <div key={item.id}>
-          <Link href={`/post/${item.slug}`}>
-            <a className="text-blue-400">{item.title}</a>
-          </Link>
-        </div>
-      ))}
+    <div className="flex justify-center mx-3 my-6">
+      <div className="w-full max-w-[800px] flex flex-col items-stretch gap-4">
+        {data.sections.map((section) => (
+          <div key={section.id}>
+            <div className="bg-[#ececec] py-3 px-4 rounded text-xl">
+              {section.title}
+            </div>
+
+            <div className="flex flex-col p-4 bg-white rounded text-lg">
+              {section.posts.length === 0 && (
+                <p className="text-gray-400">Chưa có bài giảng nào</p>
+              )}
+              {section.posts.map((item: any) => (
+                <Link href={`/post/${item.slug}`} key={item.id}>
+                  <a className="text-blue-600">{item.title}</a>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

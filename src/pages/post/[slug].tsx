@@ -15,17 +15,17 @@ interface PostProps {
 
 const Post: NextPage<PostProps> = ({ post }) => {
   return (
-    <div className="px-[3vw] grid grid-cols-[minmax(0px,_600px)_minmax(0px,_100%)] gap-5 my-8">
-      <div>
+    <div className="pl-[3vw] grid grid-cols-[minmax(0px,_600px)_minmax(0px,_100%)] gap-5 my-0">
+      <div className="my-8">
         <h1 className="text-4xl font-medium mb-6">{post.title}</h1>
         <p>{new Date(post.updatedAt).toLocaleString()}</p>
 
         <article
-          className="prose prose-invert prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-headings:mt-8 prose-headings:mb-6 prose-h1:text-2xl prose-h2:text-2xl prose-h3:text-xl prose-h1:font-semibold prose-strong:font-semibold prose-pre:bg-[#121213] prose-pre:p-4"
+          className="prose prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-headings:mt-8 prose-headings:mb-6 prose-h1:text-2xl prose-h2:text-2xl prose-h3:text-xl prose-h1:font-semibold prose-strong:font-semibold prose-pre:bg-[#121213] prose-pre:p-4"
           dangerouslySetInnerHTML={{ __html: post.content }}
         ></article>
       </div>
-      <div className="h-[calc(100vh-56px)] sticky top-14">
+      <div className="h-[calc(100vh-50px)] sticky top-14">
         <CodeEditor
           htmlCode={post.htmlCode}
           cssCode={post.cssCode}

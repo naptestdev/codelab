@@ -54,8 +54,8 @@ const CodeEditor: FC<CodeEditorProps> = ({
   }, [values, values.HTML, values.CSS, values.Javascript]);
 
   return (
-    <div className="h-[calc(100vh-76px)] flex flex-col items-stretch">
-      <div className="flex item-center justify-between p-2 flex-shrink-0 bg-[#1E1D1F]">
+    <div className="h-[calc(100vh-56px)] flex flex-col items-stretch">
+      <div className="flex item-center justify-between p-2 flex-shrink-0 bg-[#1E1D1F] text-white">
         <div className="flex items-center gap-2">
           <button
             onClick={() => {

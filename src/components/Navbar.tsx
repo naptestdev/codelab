@@ -3,9 +3,15 @@ import Link from "next/link";
 
 const Navbar: FC = () => {
   return (
-    <div className="px-[3vw] h-14 border-b border-gray-600 flex items-center">
+    <div className="px-[3vw] h-14 border-b border-gray-300 flex items-center sticky top-0 left-0 bg-white">
       <Link href="/">
-        <a className="text-2xl">Codelab</a>
+        <a className="text-2xl flex items-center gap-2">
+          <img
+            className="h-12 w-auto"
+            src="https://mindx.edu.vn/images/logo.png"
+            alt=""
+          />
+        </a>
       </Link>
     </div>
   );

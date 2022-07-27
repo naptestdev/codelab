@@ -1,13 +1,17 @@
 import { gql } from "graphql-request";
 
 export const GET_HOME_DATA = gql`
-  query {
-    posts(stage: PUBLISHED) {
+  query MyQuery {
+    sections {
       id
       title
-      slug
-      updatedAt
-      createdAt
+      posts {
+        ... on Post {
+          id
+          title
+          slug
+        }
+      }
     }
   }
 `;

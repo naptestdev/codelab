@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-[#202124] text-gray-100;
+  @apply bg-[#F8F8F8] text-zinc-900;
 }
 
 .prose * {
