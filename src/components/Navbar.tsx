@@ -9,7 +9,7 @@ const Navbar: FC = () => {
           <img className="h-12 w-auto" src="/logo.png" alt="" />
         </a>
       </Link>
-      <div className="flex items-center gap-4">
+      <div className="items-center gap-4 hidden lg:flex">
         {[
           "Tổng hợp khoá học",
           "Sản phẩm học viên",
